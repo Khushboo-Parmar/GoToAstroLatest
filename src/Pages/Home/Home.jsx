@@ -137,10 +137,8 @@ const Home = () => {
                         Read Astrology, Vastu and Religious Articles, Celebrity Horoscope Analysis, Articles on Festivals, Brief Biographies of Saints, Regular Series etc.
                     </Text>
                     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginVertical: responsiveHeight(3) }}>
-                        <Banner image={'https://d2vvtb6c5o2opz.cloudfront.net/blogs/1692881863.webp'} />
-                        <Banner image={'https://d2vvtb6c5o2opz.cloudfront.net/blogs/1691222005.webp'} />
-                        <Banner image={'https://d2vvtb6c5o2opz.cloudfront.net/blogs/1691151847.webp'} />
-                        <Banner image={'https://d2vvtb6c5o2opz.cloudfront.net/blogs/1662719044.webp'} />
+                        <Banner tittle={'Chandrayaan 3 : चाँद पर भारत के कदम ...'} des={'‘मैं अपनी मंजिल पर पहुँच गया और आप भी...’ यह संदेश चाँद से आया है और भेजने वाला है भारत के चन्द्रयान-3 मिशन का ‘विक्रम लैंडर’। 23 अगस्त, 2023 को चन्द्रमा की सतह पर पहुँचने के बाद उसने यह संदेश भेजा और उसके साथ ही चाँद की सतह की एक तस्वीर भी भेजी।'} image={'https://d2vvtb6c5o2opz.cloudfront.net/blogs/1692881863.webp'} />
+                        
                     </ScrollView>
                 </View>
 

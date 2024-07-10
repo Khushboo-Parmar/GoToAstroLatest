@@ -4,7 +4,7 @@ import { ImageBackground, ScrollView, Text, TouchableOpacity, View } from 'react
 import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 import { getData } from '../../Apis/ListsApi/ListPostApi';
 
-const Banner = ({item}) => {
+const Banner = ({item,image,tittle,des}) => {
     const navigation =useNavigation()
 
 
@@ -26,7 +26,7 @@ const Banner = ({item}) => {
             }}>
 
                 <ImageBackground
-                    source={{ uri:item?.image_name }}
+                    source={{ uri:item?.image_name  ? item?.image_name  : image}}
                     style={{
                         width: '100%',
                         height: '100%', // Fixed height or adjust as needed
@@ -44,13 +44,13 @@ const Banner = ({item}) => {
                         paddingTop:responsiveHeight(8)
                         }}>
                     <Text style={{ color: 'white', fontSize: responsiveFontSize(2), textAlign: 'center', fontWeight: 'bold', paddingHorizontal: 10 }}>
-                        {item?.title}
+                        {item?.title ? item?.title : tittle}
                     </Text>
                     <Text style={{ marginTop: 10, fontSize: responsiveFontSize(1.4), color: 'white' }}>
-                        {item?.sub_description}
+                        {item?.sub_description ? `${item?.sub_description?.slice(0,150)}...` : des}
                     </Text>
 
-                    <Text style={{ marginTop: 10, fontSize: responsiveFontSize(1.4), color: 'white',fontWeight: 'bold' }}>
+                    <Text style={{position:'absolute',bottom:20,left:10, fontSize: responsiveFontSize(1.4), color: 'white',fontWeight: 'bold' }}>
                         By - <Text>gotoAstro</Text>
                     </Text>
                 </View>

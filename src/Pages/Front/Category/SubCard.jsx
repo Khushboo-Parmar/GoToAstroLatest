@@ -20,7 +20,7 @@ export default function SubCard({ navigation, nav ,item,slug}) {
         }}
       >
         <Image
-          style={{ width: responsiveWidth(25), height: responsiveHeight(13) }}
+          style={{ width: '100%', height: responsiveHeight(13) }}
           source={{ uri: item?.image_full_path }}
         />
         <Text style={{paddingHorizontal:responsiveWidth(5),marginVertical:responsiveHeight(1),  textAlign:'center', fontWeight: 'bold', fontSize: responsiveFontSize(1.4), color: 'black' }}>

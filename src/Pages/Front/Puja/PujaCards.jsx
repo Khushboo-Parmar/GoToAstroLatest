@@ -6,6 +6,7 @@ import Addas from "../../../comon/Ads/Ads";
 import style from "../../../utils/css/comoncss/style";
 import { getData } from "../../../Apis/ListsApi/ListPostApi";
 import { useNavigation } from "@react-navigation/native";
+import ActiveEndigator from "../../../comon/Loader/ActiveEndicator";
 
 const PujaCard = ({ image, name }) => {
   const [dataa, setData] = useState([]);
@@ -57,6 +58,7 @@ const PujaCard = ({ image, name }) => {
         renderItem={renderPujaItem}
         keyExtractor={(item, index) => `${item.id}_${index}`}
         ListHeaderComponent={<Addas />}
+        ListEmptyComponent={<View style={{ paddingVertical: responsiveHeight(5) }}>{dataa === undefined ? <Text style={[style.comoncolor2, { textAlign: 'center', fontSize: responsiveFontSize(1.7), paddingVertical: responsiveHeight(10) }]}>No Pujas Found</Text> : <ActiveEndigator />}</View>}
         numColumns={2} // Adjust as needed based on your design
       />
     </>

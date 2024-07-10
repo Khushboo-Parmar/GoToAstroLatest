@@ -6,21 +6,26 @@ import style from '../../utils/css/comoncss/style';
 import { getData } from '../../Apis/ListsApi/ListPostApi';
 import ActiveEndigator from '../Loader/ActiveEndicator';
 
-export default function AstroReport({ navigation }) {
+export default function AstroReport({ navigation, price ,setPage,filter}) {
   const [dataa, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchData = async () => {
+      setPage('Report')
       const data = await getData('reports/reports_list', {
         limit: 9,
         offset: 0,
+        type_free: filter,
+        'min-price': price[0],
+        'max-price': price[1]
       });
       setData(data?.data?.results || []);
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [price,filter]);
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
@@ -90,7 +95,6 @@ export default function AstroReport({ navigation }) {
   );
 
 
-  console.log(dataa[0]?.slug)
   return (
     <>
       {loading ?
@@ -107,7 +111,7 @@ export default function AstroReport({ navigation }) {
           numColumns={2}
           contentContainerStyle={{ paddingBottom: responsiveHeight(2), paddingTop: responsiveHeight(2) }}
           columnWrapperStyle={{ justifyContent: 'space-between' }}
-          ListEmptyComponent={() => (!loading && <Text style={[style.comoncolor2,{textAlign:'center'}]}>No reports available.</Text>)}
+          ListEmptyComponent={() => (!loading && <Text style={[style.comoncolor2, { textAlign: 'center' ,marginVertical:responsiveHeight(12)}]}>No reports available.</Text>)}
         />
       }
     </>

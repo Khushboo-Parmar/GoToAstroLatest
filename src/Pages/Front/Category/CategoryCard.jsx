@@ -20,10 +20,10 @@ export default function CategryCard({ navigation, nav, item, slug, image }) {
         }}
       >
         <Image
-          style={{ width: responsiveWidth(25), height: responsiveHeight(13) }}
+          style={{ width: '80%', height: responsiveHeight(13) }}
           source={{ uri: item?.image_full_path ? item?.image_full_path : image }}
         />
-        <Text style={{ fontWeight: 'bold', fontSize: responsiveFontSize(1.6), color: 'black' }}>
+        <Text style={{marginVertical:responsiveHeight(1), fontWeight: 'bold', fontSize: responsiveFontSize(1.6), color: 'black' }}>
           {item?.name}
         </Text>
       </TouchableOpacity>

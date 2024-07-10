@@ -34,6 +34,7 @@ import { useSelector } from 'react-redux';
 import AstroDashBoard from '../../Pages/AstroDashBoard/DashBoard';
 import MyOrderDetail from '../../Pages/DashBoard/UserDashBoard/common/Pages/MyOrderDetail';
 import AddRewiew from '../../Pages/common/RewiewPage';
+import SeeAll from '../../Pages/Blog/SeeAll';
 
 
 
@@ -71,6 +72,8 @@ export default function StackNavigation() {
           <Stack.Screen options={{ headerShown: false }} name="Puja" component={Main} />
           <Stack.Screen options={{ headerShown: false }} name="Blog" component={Blog} />
           <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
+          <Stack.Screen options={{ headerShown: false }} name="SeeAll" component={SeeAll} />
+
 
           {/* Cart Pages  */}
           <Stack.Screen options={{ headerShown: false }} name="Cart" component={Cart} />

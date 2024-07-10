@@ -38,7 +38,7 @@ export default function BlogCategory({ text, image }) {
                 <View style={{ borderBottomWidth: 3, paddingVertical: 10, borderBottomColor: '#ea871e' }}>
                     <Text style={{ fontWeight: 'bold', color: 'black' }}>{text}</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation?.navigate('SeeAll',{data:dataa})}>
                     <Text style={[style.comoncolor2, { fontWeight: 'bold' }]}>See All</Text>
                 </TouchableOpacity>
             </View>

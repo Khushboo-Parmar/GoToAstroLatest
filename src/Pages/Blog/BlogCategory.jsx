@@ -43,7 +43,7 @@ export default function BlogCategory({ text, image }) {
                 </TouchableOpacity>
             </View>
 
-           {dataa?.slice(0, 2)?.map((i) => (
+           {dataa?.slice(0, 3)?.map((i) => (
                 <BlogBox  navigation={navigation} item={i} />
             ))} 
             <View style={{ opacity: 0.3, borderBottomWidth: 1, marginTop: 20, borderBottomColor: '#ea871e', width: '100%' }}></View>

@@ -22,7 +22,6 @@ export default function Filter(props) {
     const [price,setPrice] = useState([])
     const [name,setName] = useState('')
     const [slug,setSlug] = useState(props?.route?.params?.slug)
-    console.warn(slug)
     return (
         <>
             <Header top={<Text>Find &amp; Talk {'\n'}To Astrologers</Text>} />

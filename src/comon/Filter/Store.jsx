@@ -8,16 +8,14 @@ import ActiveEndigator from '../Loader/ActiveEndicator';
 
 export default function Store({ navigation, slug }) {
     const [dataa, setData] = useState([])
-    console.log(slug)
     useEffect(() => {
         const fetchData = async () => {
             const data = await getData(`store/${slug}`, { limit: 9, offset: 0 })
             if (data?.status == false) {
                 var product = await getData(`store/getProducts`, { limit: 9, offset: 0 })
-                setData(product?.data?.list)
-
+                setData(product?.data?.list)                
             } else {
-                setData(data?.data)
+                setData(data?.data?.list)
             }
         }
         fetchData();

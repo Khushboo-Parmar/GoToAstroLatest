@@ -9,6 +9,7 @@ import BlogCategory from "./BlogCategory";
 import { useEffect, useState } from "react";
 import { getData } from "../../Apis/ListsApi/ListPostApi";
 import ActiveEndigator from "../../comon/Loader/ActiveEndicator";
+import Footer from "../../comon/HeaderFooter/Footer";
 
 export default function Blog() {
     const [dataa, setData] = useState([]);
@@ -83,7 +84,12 @@ export default function Blog() {
 
 
 
+
             </ScrollView>
+            <View style={{position:'absolute',bottom:responsiveHeight(2)}}>
+        <Footer home={true} />
+        </View>
+
         </>
     )
 }

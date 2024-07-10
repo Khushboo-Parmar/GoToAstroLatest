@@ -14,7 +14,7 @@ const SubCategory = (props) => {
     const [dataa, setData] = useState([]);
     const navigation = useNavigation();
     const [slug, setSlug] = useState(props?.route?.params?.slug);
-  console.warn(slug)
+  console.warn('Here',slug)
 
 
     useEffect(() => {
